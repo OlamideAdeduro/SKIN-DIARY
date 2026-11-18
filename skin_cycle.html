@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cycle & Skin | Skin Diary</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="my skin_diary.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar bg-white border-bottom px-4 py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="my skin_diary.html">
+                Skin Diary ♡
+            </a>
+
+            <a href="my skin_diary.html"
+               class="btn btn-outline-secondary">
+                ← Back to Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+
+        <!-- PAGE INTRODUCTION -->
+        <header class="cycle-header mb-5">
+            <p class="welcome-label">YOUR MONTHLY WELLNESS</p>
+
+            <h1>My Cycle & Skin ♡</h1>
+
+            <p>
+                Understand your cycle, notice your skin changes
+                and take care of yourself throughout the month.
+            </p>
+        </header>
+
+        
+<section class="cycle-card mb-4">
+
+    <h2>Set up your cycle ♡</h2>
+
+    <p>Tell us a little about your menstrual cycle.</p>
+
+    <form id="cycleForm">
+
+        <div class="mb-4">
+            <label for="lastPeriod" class="form-label">
+                First day of your last period
+            </label>
+
+            <input
+                type="date"
+                id="lastPeriod"
+                class="form-control"
+                required
+            >
+        </div>
+
+        <div class="mb-4">
+            <label for="cycleLength" class="form-label">
+                Average cycle length (days)
+            </label>
+
+            <input
+                type="number"
+                id="cycleLength"
+                class="form-control"
+                min="15"
+                max="60"
+                value="28"
+                required
+            >
+        </div>
+
+        <div class="mb-4">
+            <label for="periodLength" class="form-label">
+                How many days does your period usually last?
+            </label>
+
+            <input
+                type="number"
+                id="periodLength"
+                class="form-control"
+                min="1"
+                max="15"
+                value="5"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn progress-button">
+            Save my cycle information ♡
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- CYCLE PREDICTIONS -->
+<section class="cycle-card mb-4" id="cycleResults">
+
+    <h2>Your cycle overview ♡</h2>
+
+    <p id="nextPeriod">
+        Save your cycle information to see your next period estimate.
+    </p>
+
+    <p id="cycleDay"></p>
+
+    <h3>Estimated cycle phases</h3>
+
+    <div id="cyclePhases">
+        Your cycle phase information will appear here.
+    </div>
+
+    <p class="mt-3">
+        <small>
+            These dates are estimates, not guaranteed predictions.
+        </small>
+    </p>
+
+</section>
+
+
+<!-- MONTHLY CYCLE CALENDAR -->
+<section class="cycle-card mb-4">
+
+    <div class="calendar-heading">
+        <div>
+            <p class="welcome-label">YOUR MONTHLY CALENDAR</p>
+            <h2>My Cycle Calendar ♡</h2>
+            <p>Keep track of your monthly cycle.</p>
+        </div>
+    </div>
+
+    <div class="calendar-navigation">
+        <button type="button" id="previousMonth">←</button>
+
+        <h3 id="calendarMonth"></h3>
+
+        <button type="button" id="nextMonth">→</button>
+    </div>
+
+    <div class="calendar-grid calendar-weekdays">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+    </div>
+
+    <div class="calendar-grid" id="calendarDays">
+        <!-- JavaScript will create the calendar dates here -->
+    </div>
+
+    <div class="calendar-legend">
+        <span><i class="period-dot"></i> Recorded period</span>
+        <span><i class="predicted-dot"></i> Estimated period</span>
+        <span><i class="selected-dot"></i> Selected date</span>
+    </div>
+
+    <p class="calendar-instruction">
+        Select a date to begin recording your period.
+    </p>
+
+</section>
+<!-- RECORDED PERIODS -->
+<section class="cycle-card mb-4">
+    <h2>Your recorded periods ♡</h2>
+
+    <p>Keep track of your previous period dates.</p>
+
+    <div id="periodRecords">
+        Your recorded periods will appear here.
+    </div>
+</section>
+
+<!-- DAILY MOOD, SYMPTOMS AND SKIN CHECK-IN -->
+
+<section class="cycle-card mb-4" id="dailyCheckin">
+
+    <h2>Your Daily Check-in ♡</h2>
+
+    <p>Take a moment to check in with yourself.</p>
+
+    <form id="checkinForm">
+
+        <div class="mb-4">
+            <label class="form-label">How are you feeling today?</label>
+
+            <select id="mood" class="form-select">
+                <option value="">Choose your mood</option>
+                <option>Happy</option>
+                <option>Calm</option>
+                <option>Sad</option>
+                <option>Anxious</option>
+                <option>Irritable</option>
+                <option>Tired</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Any symptoms today?</label>
+
+            <div class="checkin-options">
+                <label><input type="checkbox" name="symptoms" value="Cramps"> Cramps</label>
+                <label><input type="checkbox" name="symptoms" value="Bloating"> Bloating</label>
+                <label><input type="checkbox" name="symptoms" value="Headache"> Headache</label>
+                <label><input type="checkbox" name="symptoms" value="Fatigue"> Fatigue</label>
+                <label><input type="checkbox" name="symptoms" value="Breast tenderness"> Breast tenderness</label>
+                <label><input type="checkbox" name="symptoms" value="None"> None today</label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">How is your skin today?</label>
+
+            <select id="skinCondition" class="form-select">
+                <option value="">Choose your skin condition</option>
+                <option>Clear and glowing</option>
+                <option>Breakouts</option>
+                <option>Oily</option>
+                <option>Dry</option>
+                <option>Sensitive</option>
+                <option>Combination</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Additional notes</label>
+
+            <textarea
+                id="checkinNotes"
+                class="form-control"
+                rows="4"
+                placeholder="How are your body and skin feeling today?"
+            ></textarea>
+        </div>
+
+        <button type="submit" class="journal-button">
+            Save today's check-in ♡
+        </button>
+
+    </form>
+
+</section>
+
+<!-- CHECK-IN HISTORY -->
+
+<section class="cycle-card mb-4">
+    <h2>My Recent Check-ins ♡</h2>
+
+    <p>Look back at how you've been feeling.</p>
+
+    <div id="checkinHistory">
+        Your previous check-ins will appear here.
+    </div>
+</section>
+
+
+<!-- SKIN AND CYCLE INSIGHTS -->
+
+<section class="cycle-card mb-4" id="skinInsights">
+
+    <h2>Your Skin & Cycle Insights ♡</h2>
+
+    <!-- CYCLE INSIGHT SUMMARY -->
+
+    <div class="row g-3 mt-3 mb-4">
+
+        <div class="col-md-6 col-lg-3">
+            <div class="cycle-insight-stat">
+                <span>🌸</span>
+                <h3 id="insightCycleDay">Not available</h3>
+                <p>Current cycle day</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="cycle-insight-stat">
+                <span>🌱</span>
+                <h3 id="insightPhase">Not available</h3>
+                <p>Estimated cycle phase</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="cycle-insight-stat">
+                <span>🗓️</span>
+                <h3 id="insightNextPeriod">Not available</h3>
+                <p>Next estimated period</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="cycle-insight-stat">
+                <span>✨</span>
+                <h3 id="insightCheckins">0</h3>
+                <p>Saved check-ins</p>
+            </div>
+        </div>
+
+    </div>
+
+    <p>
+        Discover patterns in your mood and skin
+        using your daily check-ins.
+    </p>
+
+    <div class="row g-4 mt-2">
+
+        <!-- MOOD CHART -->
+
+        <div class="col-md-6">
+            <div class="insight-card">
+
+                <h3>Your Mood Patterns</h3>
+
+                <p>How you've been feeling.</p>
+
+                <canvas id="moodChart"></canvas>
+
+            </div>
+        </div>
+
+        <!-- SKIN CHART -->
+
+        <div class="col-md-6">
+            <div class="insight-card">
+
+                <h3>Your Skin Patterns</h3>
+
+                <p>Changes you've recorded in your skin.</p>
+
+                <canvas id="skinChart"></canvas>
+
+            </div>
+        </div>
+
+    </div>
+
+    <p class="mt-4">
+        Insights are based on your saved check-ins.
+        More entries will help you see patterns over time.
+    </p>
+
+</section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="skin_cycle.js"></script>
+</body>
+</html>

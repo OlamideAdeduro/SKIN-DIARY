@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Diary | Your Personal Skincare Space </title>
+    
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="my skin_diary.css">
+</head>
+<body>
+    <aside>
+     <h1>Skin Diary</h1>
+    <p>Your personal skincare space.</p>
+     <nav>
+            <ul>
+                <li><a href="my skin_diary.html">Dashboard</a></li>
+                <li><a href="skin_routine.html">My Routine</a></li>
+                <li><a href="skin_product.html">My Products</a></li>
+                <li><a href="skin_journal.html">Skin Journal</a></li>
+                <li><a href="skin_progress.html">My Progress</a></li>
+                <li><a href="skin_cycle.html">Cycle & Skin ♡</a></li>
+            </ul>
+        </nav>
+        </aside>
+
+         
+<main class="dashboard-main">
+
+    <!-- WELCOME -->
+    <header class="dashboard-hero">
+    <div class="hero-content">
+        <p class="welcome-label">YOUR PERSONAL WELLNESS SPACE</p>
+
+        <h1>Hello, beautiful ♡</h1>
+
+        <p>
+            Today is another chance to be consistent,
+            kind and intentional with yourself.
+        </p>
+
+        <span id="todayDate"></span>
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="images/skincare-hero.jpg"
+            alt="Beautiful skincare products"
+        >
+    </div>
+</header>
+
+<!-- DAILY ENCOURAGEMENT -->
+<section class="bottom-dashboard-grid">
+
+    
+<article class="daily-reminder-card">
+    <span class="welcome-label">A LITTLE REMINDER FOR TODAY</span>
+
+    <h2 id="dailyMessage">
+        Progress doesn't have to be perfect to be real. ♡
+    </h2>
+
+    <p id="dailyMessageDescription">
+        Be kind to yourself. Every little step counts.
+    </p>
+
+    <span class="reminder-heart">Sending you a little love ♡</span>
+    <div class="latest-checkin">
+    <h3>Your Latest Check-in ♡</h3>
+
+    <p id="dashboardMood">Mood: Not recorded yet</p>
+
+    <p id="dashboardSkin">Skin: Not recorded yet</p>
+
+    <p id="dashboardSymptoms">Symptoms: Not recorded yet</p>
+
+    <a href="skin_cycle.html">View my check-in →</a>
+</div>
+</article>
+
+
+    <article class="daily-selfcare-card">
+        <span class="welcome-label">TODAY'S SELF-CARE</span>
+        <h2>Little things for yourself</h2>
+
+       
+<div class="selfcare-activities">
+
+    <label class="selfcare-task">
+        <input type="checkbox" data-activity="water">
+        <span>💧 Drink water</span>
+        <small>+10 XP</small>
+    </label>
+
+    <label class="selfcare-task">
+        <input type="checkbox" data-activity="break">
+        <span>☕ Take a break</span>
+        <small>+10 XP</small>
+    </label>
+
+    <label class="selfcare-task">
+        <input type="checkbox" data-activity="journal">
+        <span>📖 Write in your journal</span>
+        <small>+10 XP</small>
+    </label>
+
+</div>
+<p id="selfcareProgress">0 of 3 activities completed</p>
+
+
+        <a href="skin_journal.html">Open my journal →</a>
+    </article>
+
+</section>
+
+
+<!-- DASHBOARD STATISTICS -->
+<section class="dashboard-stats">
+
+    <div class="stat-card">
+        <span>🔥</span>
+        <h2 id="streakCount">0 days</h2>
+        <p>Self-care streak</p>
+    </div>
+
+    <div class="stat-card">
+        <span>✨</span>
+        <h2 id="pointsCount">0 XP</h2>
+        <p>My points</p>
+    </div>
+
+    <div class="stat-card">
+        <span>🌸</span>
+        <h2 id="cycleCount">Not set</h2>
+        <p>Cycle information</p>
+    </div>
+
+</section>
+
+   
+<!-- TODAY'S ROUTINES AND CYCLE -->
+<section class="dashboard-main-grid">
+
+    <!-- TODAY'S ROUTINES -->
+    <article class="main-dashboard-card">
+        <div class="section-heading">
+            <div>
+                <h2>Today's Routines ♡</h2>
+                <p>Keep up with your skincare today.</p>
+            </div>
+            <span>🌸</span>
+        </div>
+
+        <!-- MORNING ROUTINE -->
+        <div class="routine-summary">
+            <div class="routine-summary-heading">
+                <span>☀️ Morning Routine</span>
+                <span id="morningCount">0 / 7</span>
+            </div>
+
+            <div class="progress">
+                <div id="morningBar"
+                     class="progress-bar"
+                     role="progressbar"
+                     style="width: 0%">
+                </div>
+            </div>
+        </div>
+
+        <!-- EVENING ROUTINE -->
+        <div class="routine-summary">
+            <div class="routine-summary-heading">
+                <span>🌙 Evening Routine</span>
+                <span id="eveningCount">0 / 6</span>
+            </div>
+
+            <div class="progress">
+                <div id="eveningBar"
+                     class="progress-bar"
+                     role="progressbar"
+                     style="width: 0%">
+                </div>
+            </div>
+        </div>
+
+        <a href="skin_routine.html" class="dashboard-card-link">
+            Open My Routines →
+        </a>
+    </article>
+
+    <!-- CYCLE AND SKIN -->
+    <article class="main-dashboard-card cycle-dashboard-card">
+
+        <p class="welcome-label">YOUR MONTHLY WELLNESS</p>
+
+        <div class="cycle-card-heading">
+            <h2>My Cycle & Skin ♡</h2>
+            <span>🌷</span>
+        </div>
+
+        <p>
+            Understand your cycle, track your symptoms
+            and notice how your skin changes.
+        </p>
+        <div class="cycle-preview">
+            <span>🗓️</span>
+            <div>
+                <strong id="dashboardCycleDay">
+            Your cycle diary
+        </strong>
+        <p id="dashboardCycleDetails">
+            Period · Mood · Symptoms · Skin </p>
+        </div>
+    </div>
+    <a href="skin_cycle.html" class="dashboard-card-link">
+    Open Cycle Tracker →
+</a>
+
+    </article>
+
+</section>
+
+
+    <!-- CYCLE & WELLNESS PREVIEW -->
+    <section class="wellness-preview">
+        <div>
+            <p class="welcome-label">COMING TO SKIN DIARY</p>
+            <h2>Cycle & Wellness ♡</h2>
+            <p>
+                A little space to understand your cycle,
+                track your skin changes and check in with yourself.
+            </p>
+            <span>Menstrual health · Skin · Mood · Wellbeing</span>
+        </div>
+        <div class="wellness-icon">🌸</div>
+    </section>
+
+    <!-- SELF CARE -->
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <h2>Your Little Self-Care Corner</h2>
+                <p>Make some time for yourself today.</p>
+            </div>
+        </div>
+
+        <div class="selfcare-preview">
+            <div>
+                <span>💗</span>
+                <h3>Write a little reflection</h3>
+                <p>How are you feeling today?</p>
+                <a href="skin_journal.html">Open my journal →</a>
+            </div>
+
+            <div>
+                <span>✨</span>
+                <h3>Celebrate your little wins</h3>
+                <p>Every small step is worth celebrating.</p>
+                <a href="skin_progress.html">View my progress →</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+    <script src="my skin_diary.js"></script>
+</body>
+</html>
